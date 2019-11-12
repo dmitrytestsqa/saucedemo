@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Finish {
 
-  WebDriver driver;
+  public WebDriver driver;
 
   public Finish(WebDriver driver) {
     this.driver = driver;
