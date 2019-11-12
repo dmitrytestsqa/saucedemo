@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class Overview {
 
-  WebDriver driver;
+  public WebDriver driver;
 
   public Overview(WebDriver driver) {
     this.driver = driver;

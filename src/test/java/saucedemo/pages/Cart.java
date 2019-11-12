@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Cart {
 
-  WebDriver driver;
+  public WebDriver driver;
 
   public Cart(WebDriver driver) {
     this.driver = driver;
