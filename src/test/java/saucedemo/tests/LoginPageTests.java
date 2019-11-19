@@ -20,7 +20,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void LoginWithEmptyUsername() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.emptyString, UserData.userNameLogin);
     Assert.assertEquals(loginPage.getErrorNotificationUsername(), loginPage.notificationUsername());
   }
@@ -28,7 +27,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void LoginWithEmptyPassword() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.userNameLogin, UserData.emptyString);
     Assert.assertEquals(loginPage.getErrorNotificationPassword(), loginPage.notificationPassword());
   }
@@ -36,7 +34,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void loginWithEmptyUsernameAndPassword() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.emptyString, UserData.emptyString);
     Assert.assertEquals(loginPage.getErrorNotificationUsername(), loginPage.notificationUsername());
   }
@@ -44,7 +41,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void incorrectLogin() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.incorrectUsername, UserData.userPassword);
     Assert.assertEquals(loginPage.getStrUsernameAndPassDoNotMatch(), loginPage.notificationUsernameAndPassword());
   }
@@ -52,7 +48,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void incorrectPassword() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.userNameLogin, UserData.incorrectPassword);
     Assert.assertEquals(loginPage.getStrUsernameAndPassDoNotMatch(), loginPage.notificationUsernameAndPassword());
   }
@@ -60,7 +55,6 @@ public class LoginPageTests extends WebDriverInit {
   @Test
   public void incorrectLoginAndPassword() {
     LoginPage loginPage = new LoginPage(driver);
-    HomePage homePage = new HomePage(driver);
     loginPage.login(UserData.incorrectUsername, UserData.incorrectPassword);
     Assert.assertEquals(loginPage.getStrUsernameAndPassDoNotMatch(), loginPage.notificationUsernameAndPassword());
   }
