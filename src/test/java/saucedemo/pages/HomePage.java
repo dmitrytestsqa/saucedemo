@@ -41,7 +41,7 @@ public class HomePage {
 
 
   public ArrayList<String> sortListAToZ() {
-    ArrayList<String> obtainedList = new ArrayList<String>();
+    ArrayList<String> obtainedList = new ArrayList();
     List<WebElement> elementList = driver.findElements(itemsSuite);
 
     for (int i = 0; i < elementList.size(); i++) {
@@ -63,7 +63,7 @@ public class HomePage {
   }
 
   public ArrayList<String> notSortedItemList() {
-    ArrayList<String> obtainedList = new ArrayList<>();
+    ArrayList<String> obtainedList = new ArrayList();
     List<WebElement> itemsList = driver.findElements(itemsSuite);
 
     for (int i = 0; i < itemsList.size(); i++) {
@@ -74,8 +74,8 @@ public class HomePage {
 
   public ArrayList<Double> sortPriceLowToHigh() {
     List<WebElement> priceItems = driver.findElements(itemsPrice);
-    ArrayList<String> sortLowHigh = new ArrayList<>();
-    ArrayList<Double> price = new ArrayList<>();
+    ArrayList<String> sortLowHigh = new ArrayList();
+    ArrayList<Double> price = new ArrayList();
 
     for (int i = 0; i < priceItems.size(); i++) {
       sortLowHigh.add(priceItems.get(i).getText().toString());
@@ -90,8 +90,8 @@ public class HomePage {
 
   public ArrayList<Double> sortPriceHighToLow() {
     List<WebElement> priceItems = driver.findElements(itemsPrice);
-    ArrayList<String> sortLowHigh = new ArrayList<>();
-    ArrayList<Double> price = new ArrayList<>();
+    ArrayList<String> sortLowHigh = new ArrayList();
+    ArrayList<Double> price = new ArrayList();
 
     for (int i = 0; i < priceItems.size(); i++) {
       sortLowHigh.add(priceItems.get(i).getText().toString());
@@ -106,7 +106,7 @@ public class HomePage {
 
   public ArrayList<Double> getPriceItemsFromPage() {
     List<WebElement> priceItems = driver.findElements(itemsPrice);
-    ArrayList<Double> price = new ArrayList<>();
+    ArrayList<Double> price = new ArrayList();
     for (int i = 0; i < priceItems.size(); i++) {
       price.add(Double.parseDouble(priceItems.get(i).getText().replace("$", "")));
     }
