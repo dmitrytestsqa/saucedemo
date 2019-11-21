@@ -1,5 +1,6 @@
 package saucedemo.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,14 +19,12 @@ public class LoginPage extends WebDriverInit {
   private String errorNotificationPassword = "Epic sadface: Password is required";
   private String strUsernameAndPassDoNotMatch = "Epic sadface: Username and password do not match any user in this service";
 
-
   private By fieldUsername = By.xpath("//input[@id='user-name']");
   private By fieldPassword = By.xpath("//input[@id='password']");
   private By loginButton = By.xpath("//input[@class='btn_action']");
   private By userNameIsRequired = By.xpath("//h3[text()='Username is required']");
   private By passIsRequired = By.xpath("//div[@class='login-box']/form/h3");
   private By errorNotificationUsernameAndPassword = By.xpath("//h3[@data-test='error']");
-  private By singUpPageTitle = By.xpath("//title");
 
   public void login(String login, String password) {
     driver.findElement(fieldUsername).sendKeys(login);
@@ -63,5 +62,4 @@ public class LoginPage extends WebDriverInit {
   public Boolean loginButtonIsDisplayed() {
     return driver.findElement(loginButton).isDisplayed();
   }
-
 }
