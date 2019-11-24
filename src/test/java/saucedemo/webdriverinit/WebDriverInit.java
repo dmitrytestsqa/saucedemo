@@ -13,6 +13,7 @@ public class WebDriverInit {
 
   @Before
   public void setUp() {
+    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\java\\resources\\chromedriver.exe");
     driver = new ChromeDriver();
     driver.get("https://www.saucedemo.com");
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

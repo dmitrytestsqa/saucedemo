@@ -26,6 +26,7 @@ public class LoginPage extends WebDriverInit {
   private By passIsRequired = By.xpath("//div[@class='login-box']/form/h3");
   private By errorNotificationUsernameAndPassword = By.xpath("//h3[@data-test='error']");
 
+  @Step("Fill login and password fields with data")
   public void login(String login, String password) {
     driver.findElement(fieldUsername).sendKeys(login);
     driver.findElement(fieldPassword).sendKeys(password);
