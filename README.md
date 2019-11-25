@@ -1,2 +1,2 @@
 # saucedemo
-In this project you can see UI automated tests which are use Selenium and JUnit. Also project was performed with Page Object Pattern.
+In this project you can see UI automated tests which are using Selenium, JUnit and Allure Reporter. Also project was performed with Page Object Pattern.
