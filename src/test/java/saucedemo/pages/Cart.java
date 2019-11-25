@@ -1,5 +1,6 @@
 package saucedemo.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,10 +21,12 @@ public class Cart {
   private By listOfItems = By.xpath("//div[@class='cart_item']");
   private By continueShoppingButton = By.xpath("//a[text()='Continue Shopping']");
 
+  @Step("Delete one product item from the cart by clicking \"REMOVE\" button")
   public void removeOneItemFromCart() {
     driver.findElement(removeButton).click();
   }
 
+  @Step("Delete all items from the cart by clicking button \"REMOVE\" near every product item")
   public void removeAllItemsFromCart() {
     List<WebElement> removeButtonsList = driver.findElements(removeButtons);
     for (int i = 0; i < removeButtonsList.size(); i++) {
@@ -36,10 +39,12 @@ public class Cart {
     return items.size();
   }
 
+  @Step("Click \"CHECKOUT\" button on the Cart page")
   public void clickCheckoutButton() {
     driver.findElement(checkoutButton).click();
   }
 
+  @Step("Click \"CONTINUE SHOPPING\" button on the Cart page")
   public void clickContinueShoppingButton() {
     driver.findElement(continueShoppingButton).click();
   }

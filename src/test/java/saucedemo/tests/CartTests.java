@@ -1,5 +1,6 @@
 package saucedemo.tests;
 
+import jdk.jfr.Description;
 import org.junit.Assert;
 import org.junit.Test;
 import saucedemo.data.UserData;
@@ -11,6 +12,7 @@ import saucedemo.webdriverinit.WebDriverInit;
 public class CartTests extends WebDriverInit {
 
   @Test
+  @Description(value = "Test confirms possibility to add one product item to cart and then delete product item from cart.")
   public void addItemToCartAndDeleteIt() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -23,6 +25,7 @@ public class CartTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms possibility to add all product items to cart and then delete all product items from cart.")
   public void addAllItemsToCartAndDeleteIt() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -35,6 +38,7 @@ public class CartTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms possibility to add product item to cart and then click CONTINUE SHOPPING button.")
   public void addItemToCartAndContinueShopping() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);

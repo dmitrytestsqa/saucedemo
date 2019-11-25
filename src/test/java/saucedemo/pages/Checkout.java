@@ -1,10 +1,8 @@
 package saucedemo.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import saucedemo.data.UserData;
 
 public class Checkout {
 
@@ -25,28 +23,34 @@ public class Checkout {
   private By continueButton = By.xpath("//input[@class='btn_primary cart_button']");
   private By errorNotification = By.xpath("//h3");
 
+  @Step("Fill field \"First Name\" with data ({firstname}), fill field \"Last Name\" with data ({lastName}), fill field \"Zip/Postal Code\" with data ({postalCode})")
   public void fillFields(String firstname, String lastName, String postalCode) {
     driver.findElement(By.xpath("//input[@id='first-name']")).sendKeys(firstname);
     driver.findElement(By.xpath("//input[@id='last-name']")).sendKeys(lastName);
     driver.findElement(By.xpath("//input[@id='postal-code']")).sendKeys(postalCode);
   }
 
+  @Step("Click \"CONTINUE\" button on the Checkout page")
   public void clickContinueButton() {
     driver.findElement(continueButton).click();
   }
 
+  @Step("Method returns notification with requirement of necessary about First Name")
   public String getErrorFirstNameNotification() {
     return errorFirstNameNotification;
   }
 
+  @Step("Method returns notification with requirement of necessary about Last Name")
   public String getErrorLastNameNotification() {
     return errorLastNameNotification;
   }
 
+  @Step("Method returns notification with requirement of necessary about Postal Code")
   public String getErrorPostalCodeNotification() {
     return errorPostalCodeNotification;
   }
 
+  @Step("Method returns error notification")
   public String errorNotification() {
     return driver.findElement(errorNotification).getText();
   }

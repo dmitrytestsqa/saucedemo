@@ -12,7 +12,7 @@ import saucedemo.pages.LoginPage;
 public class LoginPageTests extends WebDriverInit {
 
   @Test
-  @Description(value = "Try to login with correct Username and Password")
+  @Description(value = "Login with correct Username and Password")
   public void CorrectLogin() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -21,7 +21,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with empty Username")
+  @Description(value = "Login with empty Username field and see notification about requirement of Username data")
   public void LoginWithEmptyUsername() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.emptyString, UserData.userNameLogin);
@@ -29,7 +29,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with empty Password")
+  @Description(value = "Login with empty Password and see notification about requirement of Password data")
   public void LoginWithEmptyPassword() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.userNameLogin, UserData.emptyString);
@@ -37,7 +37,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with empty Username and Password")
+  @Description(value = "Login with empty Username and Password end see error notification")
   public void loginWithEmptyUsernameAndPassword() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.emptyString, UserData.emptyString);
@@ -45,7 +45,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with incorrect Username")
+  @Description(value = "Login with incorrect Username and see error notification about incorrect match of any user in this service")
   public void incorrectLogin() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.incorrectUsername, UserData.userPassword);
@@ -53,7 +53,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with incorrect Password")
+  @Description(value = "Login with incorrect Password and see error notification about incorrect match of any user in this service")
   public void incorrectPassword() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.userNameLogin, UserData.incorrectPassword);
@@ -61,7 +61,7 @@ public class LoginPageTests extends WebDriverInit {
   }
 
   @Test
-  @Description(value = "Try to login with incorrect Username and Password")
+  @Description(value = "Login with incorrect Username and Password and see error notification about incorrect match of any user in this service")
   public void incorrectLoginAndPassword() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login(UserData.incorrectUsername, UserData.incorrectPassword);

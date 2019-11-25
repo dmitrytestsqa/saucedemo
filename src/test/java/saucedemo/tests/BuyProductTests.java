@@ -1,5 +1,6 @@
 package saucedemo.tests;
 
+import io.qameta.allure.Description;
 import org.junit.Assert;
 import org.junit.Test;
 import saucedemo.data.UserData;
@@ -8,8 +9,9 @@ import saucedemo.webdriverinit.WebDriverInit;
 
 public class BuyProductTests extends WebDriverInit {
 
-  @Test
-  public void buyProduct() {
+    @Test
+    @Description(value = "E2E test, that checks possibility to login with correct data and make successful purchase.")
+    public void buyProduct() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
     Cart cart = new Cart(driver);
@@ -27,6 +29,7 @@ public class BuyProductTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test checks possibility to make purchase from product's page.")
   public void buyProductFromItsPage() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -47,6 +50,7 @@ public class BuyProductTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms impossible to make purchase with empty First Name field in the Checkout page.")
   public void buyProductWithEmptyFirstName() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -62,6 +66,7 @@ public class BuyProductTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms impossible to make purchase with empty \"Last Name\" field in the Checkout page.")
   public void buyProductWithIncorrectLastName() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -77,6 +82,7 @@ public class BuyProductTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms impossible to make purchase with empty \"Zip/Postal Code\" field in the Checkout page.")
   public void buyProductWithIncorrectPostalCode() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
@@ -92,6 +98,7 @@ public class BuyProductTests extends WebDriverInit {
   }
 
   @Test
+  @Description(value = "Test confirms possibility to cancel purchase before customer fills its personal data")
   public void cancelPurchase() {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);

@@ -1,9 +1,11 @@
 package saucedemo.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -38,7 +40,6 @@ public class HomePage {
   private By itemsPrice = By.xpath("//div[@class='inventory_item_price']");
   private By addToCartButtons = By.xpath("//button[@class='btn_primary btn_inventory']");
   private By buttonAddToCart = By.xpath("//button[text()='ADD TO CART']");
-
 
   public ArrayList<String> sortListAToZ() {
     ArrayList<String> obtainedList = new ArrayList<>();
@@ -141,19 +142,22 @@ public class HomePage {
     return visibleCartButton;
   }
 
+  @Step("Click on the name of the Sauce Labs Backpack product item")
   public void clickSauceLabsBackpack() {
     driver.findElement(sauceLabsBackpack).click();
   }
 
+  @Step("Click \"ADD TO CART\" button on the Sauce Labs Backpack product item on the Home page")
   public void clickAddCartSauceLabsBackpackButton() {
     driver.findElement(addCartSauceLabsBackpackToCartButton).click();
   }
 
+  @Step("Click \"Cart\" icon on the Home page")
   public void clickCartButton() {
     driver.findElement(cartButton).click();
-
   }
 
+  @Step("Add all product items to cart by clicking \"ADD TO CART\" button near each product on the Home page")
   public void addAllItemsOfProductsToCart() {
     List<WebElement> allProductsAddToCartButtons = driver.findElements(addToCartButtons);
     for (int i = 0; i < allProductsAddToCartButtons.size(); i++) {
@@ -161,14 +165,17 @@ public class HomePage {
     }
   }
 
+  @Step("Click \"sidebar\" icon on the Home page")
   public void clickSideBarButton() {
     driver.findElement(sidebarButton).click();
   }
 
+  @Step("Click \"All items\" button inside Sidebar")
   public void clickAllItemsButton() {
     driver.findElement(allItemsLink).click();
   }
 
+  @Step("Click \"About\" button inside Sidebar")
   public void clickAboutButton() {
     driver.findElement(aboutLink).click();
   }
@@ -177,15 +184,24 @@ public class HomePage {
     return driver.getCurrentUrl().toString();
   }
 
+  @Step("Click \"Logout\" button on the Home Page")
   public void clickLogoutButton() {
     driver.findElement(logoutLink).click();
   }
 
+  @Step("Click \"Name A to Z\" button in the dropdown list to sort product items from A to Z by alphabetic")
+  public void clickSortContainer() {
+    driver.findElement(sortContainer).click();
+    driver.findElement(sortAtoZButton).click();
+  }
+
+  @Step("Click \"Name A to Z\" button in the dropdown list to sort product items from A to Z by alphabetic")
   public void clickSortContainerAtoZButton() {
     driver.findElement(sortContainer).click();
     driver.findElement(sortAtoZButton).click();
   }
 
+  @Step("Click \"Name Z to A\" button in the dropdown list to sort product items from A to Z by alphabetic")
   public void clickSortContainerZtoAButton() {
     driver.findElement(sortContainer).click();
     driver.findElement(sortZtoAButton).click();
